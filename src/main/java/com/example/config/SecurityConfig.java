@@ -14,18 +14,18 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
-    /*@Bean
+    @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity)throws Exception{
         httpSecurity
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/sec/index2").permitAll()
                         .anyRequest().authenticated())
                 .formLogin(httpSecurityFormLoginConfigurer -> httpSecurityFormLoginConfigurer
-                        .permitAll());
-                //.httpBasic(Customizer.withDefaults());
+                        .permitAll())
+                .httpBasic(Customizer.withDefaults());
         return httpSecurity.build();
     }
-*/
+/*
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
          httpSecurity
@@ -53,6 +53,8 @@ public class SecurityConfig {
                 ;
                 return  httpSecurity.build();
     }
+*/
+
     @Bean
     public SessionRegistry sessionRegistry() {
         return new SessionRegistryImpl();
